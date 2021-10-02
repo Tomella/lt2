@@ -1,0 +1,27 @@
+{
+  "name": "lt2",
+  "version": "0.0.1",
+  "description": "MotoGP live timing",
+  "type": "module",
+  "keywords": [
+    "live",
+    "MotoGP",
+    "timing"
+  ],
+  "author": {
+    "name": "Larry Hill",
+    "url": "http://www.geospeedster.com/"
+  },
+  "license": "Apache-2.0",
+  "homepage": "http://www.geospeedster.com/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tomella/live-timing"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-fetch": "2.6.1"
+  },
+  "bundleDependencies": [],
+  "private": true
+}

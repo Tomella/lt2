@@ -1,0 +1,4 @@
+#!/bin/bash
+# Should be home already but make sure.
+cd /home/ec2-user/lt2
+git pull

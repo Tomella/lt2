@@ -1,0 +1,3 @@
+#!/bin/bash
+cd /home/ec2-user/lt2
+forever start --append --spinSleepTime 60000 --uid "lt2" server.js --public

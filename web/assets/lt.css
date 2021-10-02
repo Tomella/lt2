@@ -1,0 +1,35 @@
+html { 
+   height: 100%; 
+   margin: 0;
+}
+
+#background {
+   position: fixed;
+   margin: 50px;
+}
+
+#content {  
+   position: fixed;
+   margin: 0;
+}
+
+#background {  
+   left: 20px;
+   right: 20px;
+   top: 20px;
+   bottom: 20px; 
+   z-index: 1;
+   opacity: 0.2;
+   background-size: contain;
+   background-repeat: no-repeat;
+   background-position: center;
+}
+
+#content {
+   overflow-y: auto;
+   left: 0;
+   right: 0;
+   top: 0;
+   bottom: 0; 
+   z-index: 2;
+}
