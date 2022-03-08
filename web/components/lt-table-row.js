@@ -46,7 +46,7 @@ template.innerHTML = `
 }
 
 .name_container {
-   width: 17em;
+   width: 18em;
 }
 
 </style>

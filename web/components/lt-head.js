@@ -33,7 +33,10 @@ h4 {
    <h1 id="event_tv_name"></h1>
    <h2 id="circuit_name"></h2>
    <h3><span id="category"></span><span id="session_name"></span></h3>
-   <h4><span id="session_status_id"></span> <span class="date">Last update: <span id="date_formated"></span></span></h4>
+   <h4>Duration: <span class="duration"></span>&nbsp;
+      <span id="session_status_id"></span> 
+      <span class="date">Last update: <span id="date_formated"></span></span>
+   </h4>
 </div>
 `;
 
@@ -67,7 +70,8 @@ export default class HeadElement extends HTMLElement {
       this.combinedStatus();
    }
    
-   _duration() {
+   _duration(value) {
+      this.$(".duration").innerHTML = value;
       this.combinedStatus();
    }
 
@@ -93,7 +97,7 @@ export default class HeadElement extends HTMLElement {
             if(duration) {
                if(remaining) {
                   const template = document.createElement('template');
-                  template.innerHTML = `${remaining} laps of ${duration} remaining`;
+                  template.innerHTML = `${minutes(remaining)} laps of ${duration} remaining`;
                   target.appendChild(template.content.cloneNode(true));
                } else {
                   target.appendChild(checkered.content.cloneNode(true));
@@ -113,3 +117,12 @@ export default class HeadElement extends HTMLElement {
 }
 
 customElements.define('lt-head', HeadElement);
+
+
+
+function minutes(seconds) {
+   if(+seconds < 60) {
+      return seconds;
+   }
+   return Math.floor(seconds/ 60) + ":" + (seconds % 60 > 9?"":"0") + seconds % 60;
+}

@@ -15,10 +15,13 @@ app.get('/data/:number', async (req, res, next) => {
    if (!number) {
       return res.status(400).send('No url specified.');
    }
-
-   let fetched = await fetch(LIVE_TIMING_URL + number);
-   let body = await fetched.json();
-   res.status(fetched.status).send(body);
+   try {
+      let fetched = await fetch(LIVE_TIMING_URL + number);
+      let body = await fetched.json();
+      res.status(fetched.status).send(body);
+   } catch(e) {
+      res.status(501).send({error: "Failed"});
+   }
 });
 
 app.listen(port, function (err) {
