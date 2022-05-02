@@ -3,6 +3,12 @@ html {
    margin: 0;
 }
 
+body {
+   color: white;
+   background-color: black;
+   overflow: auto;
+}
+
 #background {
    position: fixed;
    margin: 50px;
