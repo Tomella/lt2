@@ -10,8 +10,9 @@ There are some things to do to get started. If you want to automate it more go a
 
 Serve up your content:
 > node server
+> Open a browser on http://localhost:3000
 
 ### How it builds
-It doesn't. We use http2, webcomponents and modules to keep it simple. Just write code and run it direct.
+We use http2, webcomponents and modules to keep it simple. Just write code and run it direct. Anytime you change the server side code simply restart the server, for the web side it is all native so simply refreshing the browser will pick up the changes.
 
-Copy the lt2 directory to where ever you want, set up some proxying and then go http://my.host.com/liveTiming and it should work.
+I typically run this at home, on the laptop when racing is on so there is no service or deployment scripts for serving from elsewhere.

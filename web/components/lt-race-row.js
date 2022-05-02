@@ -64,7 +64,7 @@ export default class RaceRowElement extends HTMLElement {
       if(newValue) {
          element.innerHTML = newValue;
          let pts =  config.points[newValue];
-         if(pts) element.title = pts + " points";
+         if(pts) element.title = pts + " point" + (pts > 1 ? "s" : "");
       }
    }
    
