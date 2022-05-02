@@ -17,7 +17,7 @@ template.innerHTML = `
     content: "Dark";
  }
 </style>
-<button class="dark">Theme</button>`;
+<button class="dark" title="Toggle between dark and light theme.">Theme</button>`;
 
 export default class ThemeToggleElement extends HTMLElement {
 
