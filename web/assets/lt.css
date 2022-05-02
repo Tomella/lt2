@@ -4,9 +4,17 @@ html {
 }
 
 body {
+   overflow: auto;
+}
+
+body.light {
+   color: black;
+   background-color: white;
+}
+
+body.dark {
    color: white;
    background-color: black;
-   overflow: auto;
 }
 
 #background {
@@ -38,4 +46,10 @@ body {
    top: 0;
    bottom: 0; 
    z-index: 2;
+}
+
+lt-theme-toggle {
+   position: fixed;
+   right: 20px;
+   top: 20px;
 }
