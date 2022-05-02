@@ -1,5 +1,7 @@
+import config from "../assets/config.js"
 
 const template = document.createElement('template');
+
 template.innerHTML = `
 <style>
 * {
@@ -55,6 +57,15 @@ export default class RaceRowElement extends HTMLElement {
 
    connectedCallback() {
       //this.shadowRoot.addEventListener('jobexpand', (e) => console.log(e));
+   }
+
+   _position(newValue) {
+      let element = this.$(".position");
+      if(newValue) {
+         element.innerHTML = newValue;
+         let pts =  config.points[newValue];
+         if(pts) element.title = pts + " points";
+      }
    }
    
    attributeChangedCallback(attr, oldValue, newValue) {
