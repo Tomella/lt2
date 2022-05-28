@@ -93,11 +93,14 @@ export default class HeadElement extends HTMLElement {
             break;
          default: // Otherwise if remaining > 0 show time else show checkered flag
             let remaining = +this.getAttribute("remaining");
-            let duration = +this.getAttribute("duration");
+            let duration = this.getAttribute("duration");
             if(duration) {
                if(remaining) {
                   const template = document.createElement('template');
-                  template.innerHTML = `${minutes(remaining)} laps of ${duration} remaining`;
+                  if(+duration)
+                     template.innerHTML = `${minutes(remaining)} laps of ${duration} remaining`;
+                  else
+                     template.innerHTML = `(${minutes(remaining)} remaining)`;
                   target.appendChild(template.content.cloneNode(true));
                } else {
                   target.appendChild(checkered.content.cloneNode(true));
