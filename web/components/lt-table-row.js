@@ -53,7 +53,6 @@ template.innerHTML = `
 <td class="position short_num"></td>
 <td class="rider_number num"></td>
 <td class="name_container"><span class="rider_name"></span><span class="rider_surname"></span></td>
-<td class="team_name"></td>
 
 <td class="best_lap">
    <span class="lap_time"></span>
@@ -72,7 +71,7 @@ template.innerHTML = `
 
 export default class TableRowElement extends HTMLElement {
    static get observedAttributes() { return ['position', 'rider_number', 'rider_name', 'rider_surname', 'num_lap', 'on_pit', 
-               'number', 'team_name',  'lap_time', 'gap_first', 'gap_prev', 'last_lap_time', 'last_lap', 'status_name']; }
+               'number', 'lap_time', 'gap_first', 'gap_prev', 'last_lap_time', 'last_lap', 'status_name']; }
 
    $(selector) {
       return this.shadowRoot && this.shadowRoot.querySelector(selector);
@@ -87,7 +86,6 @@ export default class TableRowElement extends HTMLElement {
    connectedCallback() {
       //this.shadowRoot.addEventListener('jobexpand', (e) => console.log(e));
    }
-
    
    _last_lap(value) {
       this.setBest(value, this.getAttribute("num_lap"));

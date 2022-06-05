@@ -22,7 +22,6 @@ lt-table-row {
    <th>Pos.</th>
    <th>No.</th>
    <th>Rider</th>
-   <th>Team</th>
    <th>Best Lap</th>
    <th>Gap 1st</th>
    <th>Gap Prev.</th>
