@@ -26,7 +26,7 @@ h1, h2, h3, h4 {
 }
 
 h4 {
-   width: 48em;
+   max-width: 50em;
 }
 </style>
 <div class="container">

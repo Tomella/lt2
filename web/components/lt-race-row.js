@@ -9,7 +9,7 @@ template.innerHTML = `
 }
 
 td {
-   width: 5em;
+   width: 2em;
 }
 
 .rider_name {
@@ -24,6 +24,31 @@ td {
 
 .name_container {
    width: 18em;
+}
+
+@media only screen and (max-width: 800px) {
+   .name_container {
+      width: 6em;
+   }
+   .rider_name {
+      display: inline-block;
+      max-width: 0.8em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-right:5px;
+   }
+   .rider_surname {
+      display: inline-block;
+      color:red;
+      max-width: 3em;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+   }   
+   .position_num {
+      width:2em;
+   }
 }
 
 </style>
@@ -65,6 +90,20 @@ export default class RaceRowElement extends HTMLElement {
          let pts =  config.points[newValue];
          if(pts) element.title = pts + " point" + (pts > 1 ? "s" : "");
       }
+   }
+
+   _rider_name(newValue) {
+      this.names(newValue);
+   }
+   
+   _rider_surname(newValue) {
+      this.names(newValue);
+   }
+   
+   names(newValue) {
+      let element = this.$(".rider_surname");
+      element.title= newValue;
+      element.innerHTML = newValue;
    }
    
    attributeChangedCallback(attr, oldValue, newValue) {

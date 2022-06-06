@@ -3,10 +3,6 @@ import RaceRowElement from "./lt-race-row.js";
 const template = document.createElement('template');
 template.innerHTML = `
 <style>
-th {
-   width: 5em;
-}
-
 lt-race-row {
    display: table-row;
    vertical-align: inherit;
@@ -24,8 +20,7 @@ lt-race-row {
          <th>Pos.</th>
          <th>No.</th>
          <th>Rider</th>
-         <th>Team</th>
-         <th>Elapsed</th>
+         <th>Gap First</th>
          <th>Gap Prev.</th>
          <th>Last Lap</th>
          <th>Laps</th>
