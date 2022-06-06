@@ -40,7 +40,6 @@ td {
    }
    .rider_surname {
       display: inline-block;
-      color:red;
       max-width: 3em;
       white-space: nowrap;
       overflow: hidden;
@@ -93,15 +92,15 @@ export default class RaceRowElement extends HTMLElement {
    }
 
    _rider_name(newValue) {
-      this.names(newValue);
+      this.names("rider_name", newValue);
    }
    
    _rider_surname(newValue) {
-      this.names(newValue);
+      this.names("rider_surname", newValue);
    }
    
-   names(newValue) {
-      let element = this.$(".rider_surname");
+   names(name, newValue) {
+      let element = this.$("." + name);
       element.title= newValue;
       element.innerHTML = newValue;
    }
