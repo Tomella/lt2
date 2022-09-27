@@ -26,6 +26,13 @@ template.innerHTML = `
 .rider_name {
    width: 7em;
    display: inline-block;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   overflow: hidden;
+}
+
+.rider_surname {
+   display: inline-block;
 }
 
 .num {

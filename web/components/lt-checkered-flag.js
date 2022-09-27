@@ -3,7 +3,7 @@ template.innerHTML = `
 <?xml version="1.0" ?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="27px" height="27px" viewBox="0 0 453.405 453.405">
+	 width="27px" height="27px" viewBox="0 0 453.405 453.405" style="fill:gray">
 	<g>
 		<path d="M382.08,60.394c-26.324-4.534-53.444-0.845-79.764,1.751c-26.223,2.587-53.604,5.753-79.585-0.397
 			c-30.592-7.241-49.945-27.294-64.216-54.464c-3.935,10.646-7.869,21.291-11.803,31.938

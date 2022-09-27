@@ -13,8 +13,16 @@ td {
 }
 
 .rider_name {
-   width: 7em;
+   width: 4em;
    display: inline-block;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   overflow: hidden;
+}
+
+.rider_surname {
+   display: inline-block;
+   overflow: hidden;
 }
 
 .num {
