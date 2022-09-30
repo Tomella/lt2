@@ -145,7 +145,11 @@ export default class TableRowElement extends HTMLElement {
          this["_" + attr](newValue);
       } else if(oldValue != newValue) {
          let element = this.$("." + attr);
-         if(element) element.innerHTML = newValue ? newValue : "";
+         if(element) {
+            let val = newValue ? newValue : "";
+            element.innerHTML = val;
+            element.title = val;
+         }
       }
    }
 }
