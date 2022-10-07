@@ -24,11 +24,12 @@ template.innerHTML = `
 }
 
 .rider_name {
-   width: 7em;
+   width: 6em;
    display: inline-block;
    white-space: nowrap;
    text-overflow: ellipsis;
    overflow: hidden;
+   vertical-align: bottom;
 }
 
 .rider_surname {

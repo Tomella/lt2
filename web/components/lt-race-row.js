@@ -13,7 +13,7 @@ td {
 }
 
 .rider_name {
-   width: 4em;
+   width: 6em;
    display: inline-block;
    white-space: nowrap;
    text-overflow: ellipsis;
@@ -45,6 +45,7 @@ td {
       overflow: hidden;
       text-overflow: ellipsis;
       margin-right:5px;
+      vertical-align: bottom;
    }
    .rider_surname {
       display: inline-block;
@@ -52,6 +53,7 @@ td {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      vertical-align: bottom;
    }   
    .position_num {
       width:2em;
