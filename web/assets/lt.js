@@ -19,7 +19,7 @@ async function polster() {
    let response = await fetch(config.dataUrl + id);
    let data = await response.json();
 
-   let head = data.lt.head;
+   let head = data.head;
    let time = head.datet;
 
    if (time > lastUpdate) {
@@ -33,7 +33,7 @@ async function polster() {
       });
 
       let session = document.querySelector("lt-session");
-      session.data = data.lt;
+      session.data = data;
    
       let themeToggleElement = document.querySelector("lt-theme-toggle");
       themeToggleElement.addEventListener("theme", (ev) => {
