@@ -20,10 +20,10 @@ async function polster() {
    let data = await response.json();
 
    let head = data.head;
-   let time = head.datet;
+   let str = JSON.stringify(data);
 
-   if (time > lastUpdate) {
-      lastUpdate = time;
+   if (str != lastUpdate) {
+      lastUpdate = str;
       document.querySelector("#background").style["background-image"] = "url(" + head.calendar_event_track + ")";
 
       let headElement = document.querySelector("lt-head");

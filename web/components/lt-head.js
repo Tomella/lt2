@@ -47,7 +47,7 @@ const checkered = document.createElement('template');
 checkered.innerHTML = `<lt-checkered-flag></lt-checkered-flag>`;
 
 export default class HeadElement extends HTMLElement {
-   static get observedAttributes() { return ['date_formated', 'remaining', 'session_status_id', 'event_tv_name', 'circuit_name', 'category', 'session_name', 'duration']; }
+   static get observedAttributes() { return ['date_formated', 'remaining', 'session_status_id', 'event_tv_name', 'circuit_name', 'category', 'session_name', 'num_laps']; }
 
    #remaining
    #session_status_id;
@@ -70,7 +70,7 @@ export default class HeadElement extends HTMLElement {
       this.combinedStatus();
    }
    
-   _duration(value) {
+   _num_laps(value) {
       this.$(".duration").innerHTML = value;
       this.combinedStatus();
    }
