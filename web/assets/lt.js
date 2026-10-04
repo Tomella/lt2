@@ -20,6 +20,11 @@ async function polster() {
    let data = await response.json();
 
    let head = data.head;
+   let riders = data.rider;
+   Object.values(riders).forEach((rider) => {
+      let nation = rider.rider_nation;
+      rider.country = config.countryLiteral[nation] ? config.countryLiteral[nation] : nation;
+   });
    let str = JSON.stringify(data);
 
    if (str != lastUpdate) {

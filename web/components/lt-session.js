@@ -25,7 +25,7 @@ export default class SessionElement extends HTMLElement {
       target.innerHTML = "";
       if(value.head) {
          let renderer;
-         if(value.head.session_name.substr(0,4).toLowerCase().indexOf("race") == 0) {
+         if(value.head.session_shortname.substr(0,3).toLowerCase().indexOf("rac") == 0) {
             renderer = document.createElement("lt-race");
          }  else {
             renderer = document.createElement("lt-table");

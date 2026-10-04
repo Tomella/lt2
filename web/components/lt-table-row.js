@@ -78,8 +78,9 @@ template.innerHTML = `
 `; 
 
 export default class TableRowElement extends HTMLElement {
-   static get observedAttributes() { return ['position', 'rider_number', 'rider_name', 'rider_surname', 'num_lap', 'on_pit', 
-               'number', 'lap_time', 'gap_first', 'gap_prev', 'last_lap_time', 'last_lap', 'status_name']; }
+   static get observedAttributes() { return ['position', 'rider_number', 'rider_name', 'country', 'rider_surname', 
+      'num_lap', 'on_pit', 'number', 'lap_time', 'gap_first', 'gap_prev', 'last_lap_time', 'last_lap', 
+      'status_name', 'color', 'text_color']; }
 
    $(selector) {
       return this.shadowRoot && this.shadowRoot.querySelector(selector);
@@ -116,10 +117,35 @@ export default class TableRowElement extends HTMLElement {
       }
    }
    
+   _team_name(value) {
+      this.buildTitle();
+   }
+
+   _bike_name(value) {
+      this.buildTitle();
+   }
+   
+   _country(value) {
+      let element = this.$(".name_container");
+      element.title = value;
+   }
+
+   buildTitle() {
+      let buff = [];
+      if(this.getAttribute("team_name")) {
+         buff.push(this.getAttribute("team_name"));
+      }
+      if(this.getAttribute("bike_name")) {
+         buff.push('(' + this.getAttribute("bike_name") + ')');
+      }
+      let title = buff.join(' ');
+      this.$(".rider_number").title = title;
+   }
+
    _on_pit(value) {
       let td = this.$(".on_pit");
-      let out = !!!value
-      if(value) {
+      let out = value === "true";
+      if(out) {
          td.innerHTML = 'In';
          td.classList.add("pit_in");
       } else {
@@ -135,6 +161,14 @@ export default class TableRowElement extends HTMLElement {
 
    _status_name(value) {
       this.setStatus(this.getAttribute("position"), value);
+   }
+
+   _color(value) {
+      this.$(".rider_number").style.backgroundColor = "#" + value;
+   }
+
+   _text_color(value) {
+      this.$(".rider_number").style.color = "#" + value;
    }
 
    setStatus(position, statusName) {
